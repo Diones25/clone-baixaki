@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap 4</title>
+    <!-- CSS Bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fontawesome/css/all.css">
+
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.waterwheelCarousel.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var carousel = $("#carousel").waterwheelCarousel({
+          flankingItems: 3,
+          movingToCenter: function ($item) {
+            $('#callback-output').prepend('movingToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedToCenter: function ($item) {
+            $('#callback-output').prepend('movedToCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movingFromCenter: function ($item) {
+            $('#callback-output').prepend('movingFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          movedFromCenter: function ($item) {
+            $('#callback-output').prepend('movedFromCenter: ' + $item.attr('id') + '<br/>');
+          },
+          clickedCenter: function ($item) {
+            $('#callback-output').prepend('clickedCenter: ' + $item.attr('id') + '<br/>');
+          }
+        });
+
+        $('#prev').bind('click', function () {
+          carousel.prev();
+          return false
+        });
+
+        $('#next').bind('click', function () {
+          carousel.next();
+          return false;
+        });
+
+        $('#reload').bind('click', function () {
+          newOptions = eval("(" + $('#newoptions').val() + ")");
+          carousel.reload(newOptions);
+          return false;
+        });
+
+      });
+    </script>
+
+</head>
+<body>
+    
+    <header class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <span>
+                    <img class="img-fluid mt-2" src="img/logo.png" alt="">
+                </span>
+            </div>
+            <!--col-md-2-->
+            <div class="col-md-4">
+    
+                <div class="input-group mt-2 mb-sm-2">
+                    <input class="form-control border-right-0" type="search" placeholder="Qual programa você procura?">
+                    <span class="input-group-append bg-white border-left-0">
+                        <span class="input-group-text" style="background: #53CC27;">
+                            <a href="">
+                                <i class="fas fa-search" style="color: white;"></i>
+                            </a>
+                        </span>
+                    </span>
+                </div>
+                <!--input-group-->
+            </div>
+            <!--col-md-4-->
+            
+            <!--Botões do header-->
+            <div class="col-md-6 d-flex justify-content-end">
+    
+                <div class="dropdown" id="dropdown_win">
+                    <button class="mt-2 btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" style="color: #B7B7B7;">
+                        <span>
+                            <i class="fab fa-windows mr-2" style="color: #ccc;"></i>
+                        </span>
+                        Windows
+                        <span>
+                            <i class="fas fa-chevron-down ml-2"></i>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <span class="dropdown-item">
+                            <i class="fab fa-android" style="color: #B7B7B7;"></i>
+                            <a href="#" class="ml-2">Android</a>
+                        </span>
+    
+                        <span class="dropdown-item">
+                            <i class="fab fa-apple" style="color: #B7B7B7;"></i>
+                            <a href="#" class="ml-2">Mac</a>
+                        </span>
+                        <span class="dropdown-item">
+                            <i class="fab fa-apple" style="color: #B7B7B7;"></i>
+                            <a href="#" class="ml-2">iOS</a>
+                        </span>
+                        <span class="dropdown-item">
+                            <i class="fab fa-windows" style="color: #B7B7B7;"></i>
+                            <a href="#" class="ml-2">Windows</a>
+                        </span>
+                        <span class="dropdown-item">
+                            <i class="fab fa-windows" style="color: #B7B7B7;"></i>
+                            <a href="#" class="ml-2">Win Phone</a>
+                        </span>
+                        <span class="dropdown-item">
+                            <i class="fab fa-linux" style="color: #B7B7B7;"></i>
+                            <a href="#" class="ml-2">Linux</a>
+                        </span>
+                    </div>
+                </div>
+    
+                <button class="btn btn-light mt-2 ml-4"
+                    style="height: 40px; color: #53CC27; font-weight: bold;">Cadastrar</button>
+                <button id="Entrar" class="btn mt-2 ml-3" style="height: 40px; background: #53CC27; color: #fff;">Entrar</button>
+            </div><!--Botões do header-->
+    
+        </div><!--row-->
+    </header>
+    <!--container-->
+
+    <!--menu Principal-->
+    <header style="background: #53CC27; height: 50px;" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Programas
+                                    <img src="img/arrow2.png" alt="" width="22">
+                                </a>
+
+                                <div class="menu-dropdown">
+                                    <div class="menu-dropdown-blocks bloco1">
+                                        <h3>Android</h3>
+                                        <ul>
+                                            <li><a href="">GBWhatsApp</a></li>
+                                            <li><a href="">Lucky Patcher</a></li>
+                                            <li><a href="">YoWhatsApp</a></li>
+                                            <li><a href="">SnapTube</a></li>
+                                            <li><a href="">Lulubox</a></li>
+                                        </ul>
+                                        <a href="">
+                                            <h6>TODOS OS APPS DE ANDROID >></h6>
+                                        </a>
+                                                                        
+                                    </div>                              
+                                    <div class="menu-dropdown-blocks bloco2">
+                                        <h3>Windows</h3>
+                                        <ul>
+                                            <li><a href="">uTorrent</a></li>
+                                            <li><a href="">Google Chrome</a></li>
+                                            <li><a href="">WinRAR</a></li>
+                                            <li><a href="">MineCraft</a></li>
+                                            <li><a href="">Baixar Músicas Grátis</a></li>
+                                        </ul>
+                                        <a href="">
+                                            <h6>TODOS OS PROGRAMAS DE WINDOWS >></h6>
+                                        </a>
+                                    </div>
+                                    <div class="menu-dropdown-blocks bloco3">
+                                        <h3>Categorias</h3>
+                                        <ul>
+                                            <li><a href="">Aplicativos de Utilidades e Segurança</a></li>
+                                            <li><a href="">Aplicativos de Internet e Rede</a></li>
+                                            <li><a href="">Aplicativos de Imagem e Vídeo</a></li>
+                                            <li><a href="">Aplicativos de Produtividade</a></li>
+                                            <li><a href="">Aplicativos de Áudio</a></li>
+                                        </ul>
+                                        <h6>TODOS AS CATEGORIAS >></h6>
+                                    </div>
+                                    <div class="menu-dropdown-blocks bloco4" style=" position: relative; top: -29px; border-right: 0; ">
+                                        <h3>Outros</h3>
+                                        <ul>
+                                            <li><a href="">Teste de velocidade de Internet</a></li>
+                                            <li><a href="">Jogos</a></li>
+                                            <li><a href="">Jogos Online</a></li>
+                                            <li><a href="">Coleções de Appps</a></li>
+                                            <li><a href="">Envie uma Sugestão</a></li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div><!--menu-dropdown-->
+                            </li>
+                            
+                            <li><a href="">Jogos</a></li>
+                            <li><a href="">Jogos Online</a></li>
+                            <li><a href="">Black Friday</a></li>
+                            <li><a href="">Mais Baixados</a></li>
+                            <li><a href="">Comparador de Celular</a></li>
+                            <li><a href="">Livros e Quadrinhos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div><!--container-->
+    </header>
+
+    <div class="borda"></div>
+
+    <!--Section que engloba o carrocel-->
+    <section class="container">
+        <div class="row">
+
+            <div class="col-md-12" style="height: 300px;">
+                
+                <!--Carrosel-->
+                <div id="carousel">
+                
+                    <a href="#"><img src="img/01.jpg" id="item-1" class="img-responsive" /></a>
+                    <a href="#"><img src="img/02.jpg" id="item-2" class="img-responsive" /></a>
+                    <a href="#"><img src="img/03.jpg" id="item-3" class="img-responsive" /></a>
+                    <a href="#"><img src="img/04.jpg" id="item-4" class="img-responsive" /></a>
+                    <a href="#"><img src="img/05.jpg" id="item-5" class="img-responsive" /></a>
+                    <a href="#"><img src="img/06.jpg" id="item-6" class="img-responsive" /></a>
+                    <a href="#"><img src="img/07.jpg" id="item-7" class="img-responsive" /></a>
+                    <a href="#"><img src="img/08.jpg" id="item-8" class="img-responsive" /></a>
+                </div>
+                <a href="#" id="prev" class="d-flex justify-content-start">
+                    <img src="img/left-arrow.png" alt="">
+                </a>
+                <a href="#" id="next" class="d-flex justify-content-end">
+                    <img src="img/right_arrow.png" alt="">
+                </a>
+                <!--Carrosel-->
+
+            </div>
+        </div><!--row-->
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 mt-sm-4">
+                <h1 class="mt-4" style="text-align: center; font-weight: bold;">Baixaki</h1>
+                    <h2 class="mb-4 pb-4" style="text-align: center; font-weight: normal;">Descubra mais, baixe melhor.</h2>                  
+            </div>
+        </div>
+    </section>
+        
+
+    <section class="main mt-4">
+
+        <!--Input que fica ao centro-->
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group pt-2 mb-4 input-group-input">
+                    <input style="height: 60px;" class="form-control border-right-0" type="search"
+                        placeholder="Qual programa você procura?">
+                    <span class="input-group-append bg-white border-left-0">
+                        <span class="input-group-text" style="background: #fff;">
+                            <a href="">
+                                <i class="fas fa-search" style="color: #53CC27; font-size: 30px;"></i>
+                            </a>
+                        </span>
+                    </span>
+                </div>
+                <p class="input-group_text">
+                    + de 115 mil produtos, 2.5 milhões avaliações e 730 mil comentários
+                </p>
+            </div>
+        </div>
+        <!--Input que fica ao centro-->
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                    <!--cards-->
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="">
+                                Mais Baixados em Windows
+                            </a>
+                        </div>
+                        <ul class="list-group list-group-flush justify-content-center">
+                            <li class="list-group-item ">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 col-4">
+                                        <button id="semana" style=" background: #53CC27; color: white;" type="button" class="btn ml-4 mr-4">
+                                            Semana
+                                        </button>
+                                    </div>
+                                    
+                                    <div id="mes" class="col-md-3 col-sm-3 col-8 mr-2">
+                                        <button type="button" class="btn btn-light ml-4 mr-4">
+                                            Mês
+                                        </button>
+                                    </div>
+
+                                    <div id="ano" class="col-md-3 col-sm-3 col-4">
+                                        <button type="button" class="btn
+                                        btn-light ml-4 mr-4">
+                                            Ano
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                
+                            </li>
+                            <li class="list-group-item">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal" >
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">1</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/utorrent.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">Utorrent</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>    
+                                            </div>  
+                                            
+                                        </div>
+                            
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">6</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/minecraft.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">Minecraft</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">2</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/chrome.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">Google Chrome</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">7</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/atube.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">aTube Catcher</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">3</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/winrar.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">WinRAR</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">8</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/itunes.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">iTunes</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">4</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/musicas.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">Baixar Músicas Grátis</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">9</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/anydesk.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">AnyDesk</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">5</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/moviemaker.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">Windows Movie Maker</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="card" style="border: none;">
+                                                <div class="card-horizontal">
+                                                    <h2 style="font-size: 25px; color: #878FB8;" class="mt-4 mr-2 pt-2">10</h2>
+                                                    <div class="img-square-wrapper">
+                                                        <img class="mt-4" src="img/adobe.jpg">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h4 class="card-title" style="font-size: 14px;">Adobe Acrobat Reader DC</h4>
+                                                        <p class="card-text" style="font-size: 12px; color: #ccc; margin-top: -10px;">28.741 downloads</p>
+                                                        <p style="font-size: 12px; color: #2699FB; cursor: pointer;">Grátis</p>
+                                                    </div>
+                                                    <button type="button" class="btn btn-light mt-4" style="width: 90px; height: 40px;">Baixar</button>
+                                                </div>
+                                        
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </li>
+                    
+                        </ul>
+                    </div><!--cards-->
+
+                </div><!--col-md-8-->
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <span>
+                                <i class="far fa-envelope" style="font-size: 25px;"></i>
+                            </span>
+                            <span class="ml-2" style="line-height: 30px;">
+                                <a href="">
+                                    Newsletter do Baixaki
+                                </a>
+                            </span>
+                            
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="border: none; margin-bottom: -20px;">
+                                <p class="text-muted">Descubra apps, jogos e dicas para ficar fera na hora de usar o celular e o PC.
+                                </p>
+                            </li>
+
+                            <form>
+                                <div class="form-group p-4">
+                                    
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                        placeholder="E-mail">
+                                </div>
+                            </form>
+                            <button style="margin-top: -30px; background: #53CC27; color: white;" type="button" class="btn ml-4 mr-4">Insvrever agora!</button>
+                            <br>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mt-4">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <a href="">
+                                        Novidades em Windows
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <span>
+                                        <a href="" style="text-decoration: none;">
+                                            <img class="borda-imagem" src="img/left-arrow-in-circle_icon.png" alt="">
+                                        </a>
+                                    
+                                    </span>
+                                    <span>
+                                        <a href="" style="text-decoration: none;">
+                                            <img class="sombra-imagem" src="img/right_arrow_circle_icon.png" alt="">
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div><!--card-header-->
+
+                        <!--Cards abaixo do card-header-->
+                        <div class="row">
+                            <div class="col-md-6" id="group-cards">
+                        
+                                <div class="card card-mulher mt-3 ml-3 mr-sm-3">
+                        
+                                    <div class="card-header">
+                                        <span>
+                                            <img src="img/mulher.jpg" alt="">
+                                        </span>
+                                        <a href="" class="ml-2">Cyber Hunter</a>
+                                    </div>
+                                    <div class="card-body" style="height: 100px;">
+                                        <p class="card-text text-muted">Battle Royale competitivo mobile que agora roda nos PCs..</p>
+                        
+                                    </div>
+                                </div>
+                                <!--card-->
+                        
+                                <div class="card card-disco mt-3 ml-3 mr-sm-3">
+                        
+                                    <div class="card-header">
+                                        <span>
+                                            <img src="img/apagar-disco.jpg" alt="">
+                                        </span>
+                                        <a href="" class="ml-2">BitRaser for File</a>
+                                    </div>
+                                    <div class="card-body" style="height: 100px;">
+                                        <p class="card-text text-muted">
+                                            Apagar arquivos do PC de forma definitiva nunca foi tão fácil
+                                        </p>
+                        
+                                    </div>
+                                </div>
+                                <!--card-->
+                        
+                                <div class="card card-conversa mt-3 ml-3 mb-3 mr-sm-3">
+                        
+                                    <div class="card-header">
+                                        <span>
+                                            <img src="img/conversa.jpg" alt="">
+                                        </span>
+                                        <a href="" class="ml-2">Twitch Studio</a>
+                                    </div>
+                                    <div class="card-body" style="height: 100px;">
+                                        <p class="card-text text-muted">
+                                            Software de transmissão gratuito que foi projetado do
+                                            zero para streamers novatos.
+                                        </p>
+                        
+                                    </div>
+                                </div>
+                                <!--card-->
+                        
+                        
+                        
+                            </div>
+                        
+                            <div class="col-md-6" id="group-cards">
+                        
+                                <div class="card card-internet mt-md-3 mr-3 ml-sm-3 mt-sm-0">
+                        
+                                    <div class="card-header">
+                                        <span>
+                                            <img src="img/internet.jpg" alt="">
+                                        </span>
+                                        <a href="" class="ml-2">Imternet Explorer 11</a>
+                                    </div>
+                                    <div class="card-body" style="height: 100px;">
+                                        <p class="card-text text-muted">
+                                            A última versão do navegador Windows
+                                        </p>
+                        
+                                    </div>
+                                </div>
+                                <!--card-->
+                        
+                                <div class="card card-yamate mt-3 mr-3 ml-sm-3">
+                        
+                                    <div class="card-header">
+                                        <span>
+                                            <img src="img/downlaod.jpg" alt="">
+                                        </span>
+                                        <a href="" class="ml-2">Y2mate</a>
+                                    </div>
+                                    <div class="card-body" style="height: 100px;">
+                                        <p class="card-text text-muted">
+                                            Baixar áudio do Youtube nunca foi tão fácil
+                                        </p>
+                        
+                                    </div>
+                                </div>
+                                <!--card-->
+                        
+                                <div class="card card-telefone mt-3 mr-3 mb-3 ml-sm-3">
+                        
+                                    <div class="card-header">
+                                        <span>
+                                            <img src="img/telefone.jpg" alt="">
+                                        </span>
+                                        <a href="" class="ml-2">Seu Telefone</a>
+                                    </div>
+                                    <div class="card-body" style="height: 100px;">
+                                        <p class="card-text text-muted">
+                                            App Seu Telefone permite manuseio de celular via PC
+                                        </p>
+                        
+                                    </div>
+                                </div>
+                                <!--card-->
+                            </div>
+                        </div>
+                    </div><!--card-->
+
+                </div>
+
+                <div class="col-md-4 mt-4">
+
+                    <div class="card">
+                        <div class="card-header" style="height: 60px;">
+                            <a href="" style="line-height: 35px;">
+                                Descubra por coleções
+                            </a>
+                        </div>
+
+                        <div class="card m-3 justify-content-center align-items-center">
+                            <img class="card-img-top" src="img/celulares.jpg">
+                            <h2 class="texto-card">Melhores apps de Prodcasts</h2>
+                            <button id="button" type="button" class="btn btn-light botao-cards-image">10 Produtos</button>
+                            
+                        </div>
+
+                        <div class="card ml-3 mr-3  justify-content-center align-items-center">
+                            <img class="card-img-top" src="img/aplicativos.jpg">
+                            <h2 class="texto-card texto-card-windows" style="text-align: center;">Melhores Antivírus para Windows</h2>
+                            <button type="button" class="btn btn-light botao-cards-image">6 Produtos</button>
+                        </div>
+
+                        <div class="card m-3 align-items-center">
+                            <img class="card-img-top" src="img/vingadores.jpg">
+                            <h2 class="texto-card" style="text-align: center; margin-right: 40px;">Para quem quer mais Marvel depois de vingadores: Guerra Infinita</h2>
+                            <button type="button" class="btn btn-light botao-cards-image" style="margin-top: 115px;">28 Produtos</button>
+                            
+                        </div>
+                        
+                    </div><!--card-->
+
+                </div>
+
+            </div>
+        </div><!--container-->
+        <br>
+    </section>
+
+    
+    <footer style="background: #bbbfc3; width: 100%; height: 70px;">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-2 col-sm-2" style="height: 70px;">
+                    <img src="img/baixaki.PNG" alt="" class="mt-3">
+                </div>
+
+                <div id="idiomas" class="ml-auto">
+                    <ul class="nav d-flex justify-content-end mt-3" >
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" style="color:#000;">English</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#000;">Português (Brasil)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#000;">Português (Portugal)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#000;">Sobre o site</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#000;">Política de Privacidade</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color:#000;">RSS</a>
+                        </li>
+                    </ul>
+               </div>               
+            </div><!--row-->
+
+            <div class="row" >
+                <div id="sobre_anuncie" class="col-md-6" style=" height: 70px; margin-top: 14px;">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: #000; line-height: 55px;">SOBRE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: #000; line-height: 55px;">ANUNCIE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: #000; line-height: 55px;">CONTATO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: #000; line-height: 55px;">TRABALHE</a>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div id="reservados_p" class="col-md-6" style=" height: 70px; margin-top: 14px;">
+                    <p style=" font-size: 14px;  color: rgb(161, 158, 158);">© COPYRIGHT 2019 - NO ZEBRA NETWORK S.A, TODOS OS DIREITOS
+                        RESERVADOS..</p>
+                </div>
+                
+            </div>
+            <hr>
+            
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" style="color: #000; line-height: 55px;">TecMundo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">MegaCurioso</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">Minha Série</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">Click Jogos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">The Brief</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">Voxel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">Marie Curie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">Baixaki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">The Hardware Show</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #000; line-height: 55px;">Fika Dika</a>
+                </li>
+            </ul>
+            
+        </div>
+        
+    </footer>
+
+    <footer>
+        <!-- JS -->
+        <script src="css/fontawesome/js/all.js"></script>
+        <script src="public/js/jquery.js"></script>
+        <script src="public/js/bootstrap.bundle.min.js"></script>
+    </footer>
+</body>
+</html>

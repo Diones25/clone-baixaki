@@ -1,0 +1,368 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background: #ECEDEE;
+    border-top: 1px solid #ccc;
+    box-shadow: 4px 4px 2px #000;
+    
+}
+
+li a {
+    color: #fff;
+}
+
+.borda{
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/*CSS para o card ficar horizontal*/
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+/*card*/
+.card-header a{
+    color: #000;
+}
+
+/*Removendo margem e padding da tag 'p'*/
+p{
+    margin: 0;
+    padding: 0;
+}
+/****************************************/
+
+/*Removendo margem e padding da tag 'button'*/
+button{
+    margin: 0;
+    padding: 0;
+}
+/****************************************/
+
+/*CSS Carousel*/
+#carousel {
+    max-width:960px;
+    width: 100%;
+    height:300px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+#carousel img {
+    height: 260px;
+    visibility:hidden; /* ocultar imagens até que o carrossel possa lidar com elas */
+    cursor:pointer; 
+}
+#prev{
+    position: relative;
+    bottom: 170px;
+    z-index: 999;
+}
+#next{
+    position: relative;
+    bottom: 220px;
+    z-index: 999;
+}
+/*****************************************/
+
+.sombra-imagem{
+    box-shadow: 2px 3px 3px #ccc;
+    border-radius: 32px;
+}
+.borda-imagem{
+    border: 1px solid #e6e9eb;
+    border-radius: 32px;
+}
+
+
+/*CSS dos cards Noviades em Windows*/
+#group-cards a{
+    color: #4A73BA;
+    font-weight: bold;
+}
+#group-cards p{
+    font-size: 14px;
+    text-align: left;
+}
+/***********************************/
+
+
+.texto-card{
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    z-index: 99;
+    margin-top: 54px;
+    text-align: left;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    
+}
+
+.card-img-top{
+    height: 170px;
+}
+
+.botao-cards-image{
+    width: 110px;
+    background: rgba(61, 61, 61, 0.8);
+    color: #fff;
+    position: absolute;
+    z-index: 99;
+}
+
+
+.input-group-input{
+    position: relative;
+    bottom: 38px;
+}
+.input-group_text{
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    top: -45px;
+}
+
+/*CSS para funcionar o Doprdown do botão Windows*/
+.dropdown>.dropdown-menu {
+  top: 200%;
+  transition: 0.3s all ease-in-out;
+}
+.dropdown:hover>.dropdown-menu {
+  display: block;
+  top: 100%;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+/*************************************************/
+
+/*Rotação o arrow*/
+button:hover .fa-chevron-down{
+    transform: rotate(-180deg);
+    transition: all 0.5s;
+}
+/*****************/
+
+/*Menu dropdown responsivo*/
+.dropdown-item a{
+    text-decoration: none;
+    color:#B7B7B7;
+}
+.menu{
+    width: 100%;
+    height: 50px;
+}
+.menu li{
+    list-style: none;
+    display: inline-block;
+    line-height: 50px;
+    padding-right: 40px;
+}
+.menu li a{
+    text-decoration: none;
+    color: #fff;
+}
+.menu span{
+    margin-left: 5px;
+    margin-right: 40px;
+    position: relative;
+    top: 2px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menu-dropdown{
+    width: 100%;
+    background: #FFFFFF;
+    position: absolute;
+    z-index: 999999;
+    box-shadow: 2px 2px 6px #ccc;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: none;
+    overflow-x: hidden;
+}
+
+.menu li:hover .menu-dropdown{
+    display: block;
+}
+.menu li:hover img{
+    transform: rotate(-180deg);
+    transition:all ease .5s;
+}
+.menu-dropdown-blocks{
+    margin-top: 25px;
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+}
+
+.menu-dropdown-blocks-borda{
+    width: 1px;
+    height: 260px;
+    background: #ccc;
+}
+
+.menu-dropdown-blocks h3{
+    color: #B6B6B6;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.menu-dropdown-blocks li{
+    display: block;
+    margin-bottom: -10px;
+}
+.menu-dropdown-blocks li a{
+    color: #49669C;
+}
+.menu-dropdown-blocks li a:hover{
+    text-decoration: underline;
+}
+.menu-dropdown-blocks h6{
+    font-size: 12px;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #49669C;
+}
+/****************************************/
+
+/*Botões windows, cadastrar responsivel*/
+#coluns-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+/****************************************/
+#reservados_p{
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+@media only screen and (min-width: 1200px){
+    
+    .bloco1{
+        width: 20%;
+    }
+    .bloco2{
+        width: 23%;
+    }
+    .bloco3{
+        width: 27%;
+    }
+    .bloco4{
+        width: 25%;
+    }
+    
+}
+
+/*Essa media dar uma margin-top no menu*/
+@media only screen and (max-width: 767px){
+    .header{
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 991px){
+    .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 100%;
+        max-width: 97.666667%;
+    }
+}
+
+@media (max-width: 991px){
+    .col-md-4 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 100%;
+        max-width: 97.666667%;
+        margin-top: 10px;
+    }
+}
+
+/*Margens do cards*/
+@media (max-width: 575px){
+    .card-mulher{
+        margin-right: 14px;
+    }
+    .card-disco{
+        margin-right: 14px;
+    }
+    .card-conversa{
+        margin-right: 14px;
+    }
+    .card-internet{
+        margin-left: 14px;
+    }
+    .card-yamate{
+        margin-left: 14px;
+    }
+    .card-telefone{
+        margin-left: 14px;
+    }
+}
+
+@media (max-width: 991px){
+    #sobre_anuncie{
+        font-size: 12px;
+    }
+    .header{
+        margin-top: 8px;
+    }
+    
+}
+@media (min-width: 768px){
+    #dropdown_win{
+        position: relative;
+        left: 15px;
+    }
+}
+
+@media (max-width: 355px){
+    #sobre_anuncie{
+        font-size: 10px;
+    }
+}
+@media (max-width: 322px){
+    #sobre_anuncie{
+        font-size: 9px;
+    }
+}
+@media (max-width: 575px){
+    #semana{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        
+    }
+    #mes{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #ano{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
